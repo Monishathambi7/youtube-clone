@@ -6,7 +6,7 @@ export const addToHistory=(HistoryData)=>async(dispatch)=>{
         const { data } = await api.addToHistory(HistoryData);
         console.log(HistoryData)
         dispatch({ type: "POST_HISTORY", data });
-        dispatch({type:"UPDATE_USER_POINTS",payload:data.user})
+        // dispatch({type:"UPDATE_USER_POINTS",payload:data.user})
         dispatch(getAllHistory())
     } catch (error) {
         console.log(error);

@@ -10,10 +10,10 @@ export const HistoryController = async (req, res) => {
 
   try {
     await addToHistory.save();
-    const user = await users.findById(HistoryData.Viewer);
-    user.points += 5;
-    await user.save();
-    res.status(200).json("added to History", user);
+    // const user = await users.findById(HistoryData.Viewer);
+    // user.points += 5;
+    // await user.save();
+    res.status(200).json("added to History");
     // console.log("DOne");
   } catch (error) {
     res.status(400).json(error);
