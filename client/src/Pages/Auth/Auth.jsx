@@ -27,8 +27,9 @@ function Auth({ User, setAuthBtn, setEditCreateChanelBtn }) {
             </p>
           </div>
           <div className="email_Auth">{User?.result.email}</div>
-        </p>
+        </p><br></br>
         <div className="points_Auth"> Your Points:  {User?.result?.points ||0} </div> 
+        <br></br>
         <div className="btns_Auth">
           {User?.result.name ? (
             <>
