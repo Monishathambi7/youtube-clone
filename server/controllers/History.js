@@ -1,4 +1,5 @@
 import History from "../models/History.js";
+import  users from '../models/auth.js'
 import mongoose from "mongoose";
 
 export const HistoryController = async (req, res) => {
@@ -9,7 +10,10 @@ export const HistoryController = async (req, res) => {
 
   try {
     await addToHistory.save();
-    res.status(200).json("added to History");
+    const user = await users.findById(HistoryData.Viewer);
+    user.points += 5;
+    await user.save();
+    res.status(200).json("added to History", user);
     // console.log("DOne");
   } catch (error) {
     res.status(400).json(error);
